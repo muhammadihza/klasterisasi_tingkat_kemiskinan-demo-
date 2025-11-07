@@ -10,6 +10,8 @@ def labeling_result(n, df):
         label = st.text_input(f"Masukkan label untuk klaster {i+1} (misalkan {huruf}):")
         labels.append(label)
 
+    df['Cluster'] = df['Cluster'].astype('object')
+    
     conditions = [(df['Cluster'] == i) for i in range(n)]
     choices = labels[:n]
     
