@@ -6,7 +6,8 @@ def labeling_result(n, df):
     labels = []
 
     for i in range(n):
-        label = st.text_input(f"Masukkan label untuk klaster {i+1}:")
+        huruf = chr(65 + i)  # Mengonversi indeks ke huruf (A, B, C, ...)
+        label = st.text_input(f"Masukkan label untuk klaster {i+1} (misalkan {huruf}):")
         labels.append(label)
 
     conditions = [(df['Cluster'] == i) for i in range(n)]
